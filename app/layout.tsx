@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Caveat, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import HomeMobileNav from "@/components/HomeMobileNav";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="sr" className={cn("font-sans", geist.variable)}>
       <body className={caveat.variable}>
         <Navbar />
+        <HomeMobileNav />
         {children}
       </body>
     </html>
