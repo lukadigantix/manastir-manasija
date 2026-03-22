@@ -9,7 +9,6 @@ const navItems = [
   { href: "/o-manastiru", label: "МАНАСТИР" },
   { href: "/despot-stefan", label: "ДЕСПОТ СТЕФАН" },
   { href: "/donacije", label: "ДОНАЦИЈЕ" },
-  { href: "/literatura", label: "ЛИТЕРАТУРА" },
   { href: "/kontakt", label: "КОНТАКТ" },
   { href: "/prodavnica", label: "ПРОДАВНИЦА" },
 ];
