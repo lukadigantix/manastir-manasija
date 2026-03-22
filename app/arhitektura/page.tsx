@@ -36,12 +36,6 @@ export default function ArhitekturaPagе() {
                 богатом каменом декорацијом, гарнитуром резбарених орнамената и
                 витким пропорцијама зидова.
               </p>
-              <Link
-                href="/o-manastiru"
-                className="mt-2 w-fit bg-[#5a1e1e] text-white text-xs font-bold tracking-widest px-10 py-4 hover:bg-[#3e1515] transition-colors"
-              >
-                САЗНАЈ ВИШЕ
-              </Link>
             </div>
 
             {/* Illustration — desktop only */}
@@ -130,10 +124,7 @@ export default function ArhitekturaPagе() {
           </div>
         </section>
 
-        <section
-          className="relative w-full overflow-visible mt-8 md:mt-0"
-          style={{ minHeight: "320px" }}
-        >
+        <section className="relative w-full mt-8 md:mt-0">
           {/* Mobile: edge-to-edge */}
           <div className="md:hidden relative w-screen -ml-4 h-[360px]">
             <Image
@@ -144,29 +135,19 @@ export default function ArhitekturaPagе() {
             />
           </div>
 
-          {/* Desktop: absolute overflow */}
-          <div
-            className="hidden md:block"
-            style={{
-              position: "absolute",
-              top: "-120px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "1300px",
-              height: "1300px",
-            }}
-          >
+          {/* Desktop: normal flow */}
+          <div className="hidden md:block relative h-[700px]">
             <Image
               src="/images/Export/arch-full-width.webp"
               alt="Манасија"
               fill
-              className="object-contain"
+              className="object-contain object-center"
             />
           </div>
         </section>
 
         {/* ── Цитат / истакнути текст ───────────────────────────── */}
-        <section className="w-full py-12 md:py-24 mt-8 md:mt-80">
+        <section className="w-full py-12 md:py-24">
           <div className="mx-auto max-w-3xl px-4 md:px-8 text-center">
             <p className="text-sm md:text-lg font-bold text-zinc-800 leading-relaxed">
               Технике градње обухватају рад са каменом и дрветом, примењене у

@@ -372,7 +372,7 @@ export default function OManastiruPage() {
           <div className="hidden md:block" style={{
               position: "absolute",
               top: "-300px",
-              left: "-280px",
+              right: "-280px",
               width: "1280px",
               height: "1120px",
               zIndex: 0,
@@ -392,7 +392,7 @@ export default function OManastiruPage() {
             className="relative mx-auto max-w-[1200px] px-4 md:px-8 h-full flex items-center"
             style={{ zIndex: 1 }}
           >
-            <div className="ml-0 md:ml-auto flex flex-col gap-6 max-w-lg py-10 md:py-20">
+            <div className="ml-0 flex flex-col gap-6 max-w-lg py-10 md:py-20">
               <h2
                 className="text-5xl lg:text-7xl text-zinc-900 leading-tight"
                 style={{ fontFamily: "var(--font-caveat), cursive" }}

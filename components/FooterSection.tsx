@@ -19,7 +19,7 @@ const pages2 = [
   { label: "Трпезарија", href: "/trpezarija" },
   { label: "Библиотека", href: "/biblioteka" },
   { label: "Ресавска школа", href: "/resavska-skola" },
-  { label: "Литература", href: "/o-manastiru" },
+  { label: "Литература", href: "/literatura" },
 ];
 
 const events = [

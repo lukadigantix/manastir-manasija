@@ -398,7 +398,7 @@ export default function FreskopisPage() {
         </section>
 
         <section
-          className="relative w-full overflow-visible mt-8 md:mt-50"
+          className="relative w-full overflow-visible mt-8 md:mt-50 pb-0 md:pb-[420px]"
           style={{ minHeight: "600px" }}
         >
           {/* Mobile: bleeding image from the left */}

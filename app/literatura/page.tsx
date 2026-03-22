@@ -1,5 +1,148 @@
-import Image from "next/image";
 import FooterSection from "@/components/FooterSection";
+
+const books = [
+  {
+    category: "Књиге о манастиру Манасији",
+    accent: true,
+    items: [
+      {
+        title: "Манасија",
+        author: "Драгутин Анастасијевић",
+        desc: "Монографија о историји и архитектури Манасије, са детаљним прегледом грађевинских фаза и историјских збивања.",
+      },
+      {
+        title: "Деспот Стефан Лазаревић",
+        author: "Михаило Динић",
+        desc: "Свеобухватна студија о животу и делу Стефана Лазаревића, темељна за разумевање контекста у ком је Манасија настала.",
+      },
+      {
+        title: "Монастир Манасија — Ресава",
+        author: "Павле Мијовић",
+        desc: "Детаљан водич кроз историју, архитектуру и фрескопис, са фотографском документацијом.",
+      },
+      {
+        title: "Задужбине Немањића и српских владара",
+        author: "Светозар Радојчић",
+        desc: "Шири контекст манастирских задужбина у српском средњовековљу, у ком Манасија заузима посебно место.",
+      },
+    ],
+  },
+  {
+    category: "Општа православна литература",
+    items: [
+      {
+        title: "Свето Писмо — Библија",
+        author: "Свети синод Српске православне цркве (прев.)",
+        desc: "Темељни текст православног хришћанства. Препоручено издање Светог синода СПЦ.",
+      },
+      {
+        title: "Добротољубље (том I–V)",
+        author: "Свети Никодим Светогорац, Свети Макарије Коринтски (прир.)",
+        desc: "Антологија аскетских и мистичких текстова Отаца Цркве. Незаобилазан извор духовног живота у православљу.",
+      },
+      {
+        title: "Лествица",
+        author: "Свети Јован Лествичник",
+        desc: "Класично дело монашке духовности које описује тридесет степени духовног раста.",
+      },
+      {
+        title: "Пролог Охридски (том I–IV)",
+        author: "Свети Николај Велимировић",
+        desc: "Свакодневна духовна читања са житијима светих, поукама и размишљањима за сваки дан у години.",
+      },
+      {
+        title: "Охридски Пролог — минејска издања",
+        author: "Свети Николај Велимировић",
+        desc: "Кратка духовна читања уз животе светих, намењена свакодневној молитви.",
+      },
+    ],
+  },
+  {
+    category: "Духовна литература и поуке",
+    items: [
+      {
+        title: "Молитве на језеру",
+        author: "Свети Николај Велимировић",
+        desc: "Лирске молитве и размишљања о Богу, природи и човековој души — једно од најчитанијих дела српске духовне литературе.",
+      },
+      {
+        title: "Мисионарска писма",
+        author: "Свети Николај Велимировић",
+        desc: "Збирка писама у којима Свети Николај даје конкретне духовне одговоре на животна питања.",
+      },
+      {
+        title: "Беседа на Литургији",
+        author: "Свети Јустин Поповић",
+        desc: "Теолошка тумачења Свете Литургије са дубоком духовном поуком.",
+      },
+      {
+        title: "Православна вера (том I–IV)",
+        author: "Свети Јустин Поповић",
+        desc: "Свеобухватна православна догматика, незаобилазна за теолошко образовање.",
+      },
+      {
+        title: "Тихе поуке",
+        author: "Старац Паисије Светогорац",
+        desc: "Записи разговора са старцем Паисијем, пуни практичне мудрости и духовног усмерења за савремене вернике.",
+      },
+    ],
+  },
+  {
+    category: "Научни и стручни радови",
+    items: [
+      {
+        title: "Фреске Манасије",
+        author: "Светозар Радојчић",
+        desc: "Стручна студија о иконографском програму и уметничким вредностима фрескописа У Цркви Свете Тројице.",
+      },
+      {
+        title: "Моравска школа и њено доба",
+        author: "Воислав Ј. Ђурић",
+        desc: "Монографија о уметности и архитектури Моравске школе, са посебним освртом на Манасију.",
+      },
+      {
+        title: "Ресавска школа — преписивачка традиција",
+        author: "Ђорђе Трифуновић",
+        desc: "Детаљна студија о скрипторској и књижевној активности у Манасији у 15. веку.",
+      },
+      {
+        title: "Историја српске православне цркве",
+        author: "Димитрије Богдановић",
+        desc: "Преглед историјата Српске цркве, са поглављима о улози монаштва и задужбинарства.",
+      },
+      {
+        title: "Средњовековна насеља у долини Ресаве",
+        author: "Јованка Калић",
+        desc: "Археолошка и историографска студија о подручју у ком је Манасија саграђена.",
+      },
+    ],
+  },
+  {
+    category: "Извори и архивске грађе",
+    items: [
+      {
+        title: "Животопис деспота Стефана Лазаревића",
+        author: "Константин Филозоф (15. век)",
+        desc: "Примарни историјски извор о животу и владавини Стефана Лазаревића, написан у Манасији. Незаобилазан за свако истраживање.",
+      },
+      {
+        title: "Слово љубве",
+        author: "Деспот Стефан Лазаревић (15. век)",
+        desc: "Аутентично књижевно дело самог ктитора Манасије — ремек-дело средњовековне српске лирске прозе.",
+      },
+      {
+        title: "Хиландарски типик",
+        author: "Свети Сава (13. век)",
+        desc: "Правило монашког живота које је обликовало устав Манасије и других српских задужбина.",
+      },
+      {
+        title: "Архивска грађа Народне библиотеке Србије",
+        author: "Народна библиотека Србије",
+        desc: "Збирка рукописа и докумената везаних за Манасију доступна у дигиталном и физичком архиву НБС.",
+      },
+    ],
+  },
+];
 
 export default function LiteraturaPage() {
   return (
@@ -8,204 +151,82 @@ export default function LiteraturaPage() {
         className="w-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/bgbodyfinal.webp')" }}
       >
-        {/* ── HERO ─────────────────────────────────────────────── */}
-        <section className="relative w-full pt-0 pb-8 md:py-24 overflow-visible">
-          {/* Mobile: bleeding image from the right */}
-          <div className="md:hidden relative" style={{ height: "480px", marginBottom: "-40px" }}>
-            <div style={{ position: "absolute", left: "-60px", right: "-140px", top: 0, height: "480px" }}>
-              <Image
-                src="/images/Export/freske-grafija.webp"
-                alt="Литература Манасије"
-                fill
-                className="object-contain object-right"
-              />
-            </div>
+        {/* ── Наслов ─────────────────────────────────────────── */}
+        <section className="w-full pt-28 md:pt-48 pb-12 md:pb-20 px-4 md:px-8">
+          <div className="mx-auto max-w-[860px]">
+            <p className="text-xs font-bold tracking-[0.2em] text-[#5a1e1e] uppercase mb-4">
+              Библиотека Манасије
+            </p>
+            <h1
+              className="text-6xl md:text-8xl text-zinc-900 leading-tight mb-6"
+              style={{ fontFamily: "var(--font-caveat), cursive" }}
+            >
+              Литература
+            </h1>
+            <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-2xl text-justify">
+              Избор књига, историјских извора и научних радова везаних за
+              Манасију, православну духовност и српску средњовековну културу.
+              Списак је намењен посетиоцима, истраживачима и свима заинтересованим
+              за дубље упознавање са баштином овог места.
+            </p>
           </div>
+        </section>
 
-          <div className="mx-auto max-w-[1200px] px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center overflow-visible">
-            {/* Text */}
-            <div className="flex flex-col gap-6">
-              <h2
-                className="text-5xl md:text-7xl text-zinc-900 leading-tight"
-                style={{ fontFamily: "var(--font-caveat), cursive" }}
-              >
-                Литература
-              </h2>
-              <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-lg text-justify">
-                Манасија није само војна и духовна тврђава — у њеним зидинама
-                цветала је средњовековна српска књижевност. Под покровитељством
-                деспота Стефана Лазаревића, монастир је постао место окупљања
-                учених монаха, писара и књижевника, чији је рад обликовао
-                писану баштину српскога народа.
-              </p>
-            </div>
+        {/* ── Разделник ──────────────────────────────────────── */}
+        <div className="mx-auto max-w-[860px] px-4 md:px-8">
+          <div className="w-full h-[1px] bg-zinc-300" />
+        </div>
 
-            {/* Illustration — desktop only */}
-            <div className="hidden md:block relative" style={{ minHeight: "600px" }}>
-              <div
-                style={{
-                  position: "absolute",
-                  top: "-200px",
-                  left: "-80px",
-                  width: "1200px",
-                  height: "1200px",
-                }}
-              >
-                <Image
-                  src="/images/Export/freske-grafija.webp"
-                  alt="Литература Манасије — илустрација"
-                  fill
-                  className="object-contain"
-                />
+        {/* ── Категорије ─────────────────────────────────────── */}
+        <section className="w-full py-12 md:py-20 px-4 md:px-8">
+          <div className="mx-auto max-w-[860px] flex flex-col gap-16 md:gap-24">
+            {books.map((section) => (
+              <div key={section.category}>
+                {/* Наслов категорије */}
+                <h2
+                  className="text-4xl md:text-6xl text-zinc-900 leading-tight mb-8 md:mb-12"
+                  style={{ fontFamily: "var(--font-caveat), cursive" }}
+                >
+                  {section.category}
+                </h2>
+
+                {/* Књиге */}
+                <div className="flex flex-col divide-y divide-zinc-200">
+                  {section.items.map((book, i) => (
+                    <div key={i} className="py-6 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-2 md:gap-12">
+                      <div>
+                        <p className="text-sm md:text-base font-semibold text-zinc-900 leading-snug">
+                          {book.title}
+                        </p>
+                        <p className="text-xs md:text-sm text-[#5a1e1e] mt-1">
+                          {book.author}
+                        </p>
+                      </div>
+                      <p className="text-sm text-zinc-600 leading-relaxed mt-1 md:mt-0">
+                        {book.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* ── РУКОПИСНА БАШТИНА ────────────────────────────────── */}
-        <section className="w-full py-10 md:py-24">
-          <div className="mx-auto max-w-[800px] px-4 md:px-8 flex flex-col items-center text-center gap-6 md:gap-10">
-            <h2
-              className="text-5xl md:text-7xl text-zinc-900 leading-tight"
-              style={{ fontFamily: "var(--font-caveat), cursive" }}
-            >
-              Рукописна баштина
-            </h2>
-            <div className="flex flex-col gap-6 text-sm md:text-base text-zinc-600 leading-relaxed">
-              <p>
-                У Манасији је у првој половини 15. века настао значајан број
-                рукописних кодекса. Монаси су преписивали богослужбене књиге,
-                теолошка дела, хагиографије и књижевне текстове, чувајући
-                знање у тешким временима пред налетом Османлија.
-              </p>
-              <p>
-                Посебан подвиг представљало је уређивање тзв. ресавске редакције
-                старословенског језика — систематска реформа правописа и
-                граматике која је извршена управо у духовном кругу ресавских
-                монаха и постала образац за читав православни словенски свет.
-              </p>
-              <p>
-                Рукописи настали у Манасији данас се чувају у збиркама у
-                Србији, Русији, Бугарској и Румунији, сведочећи о широком
-                утицају ове скрипторске традиције.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── FULL-WIDTH СЛИКА ─────────────────────────────────── */}
-        <section className="w-full flex flex-col items-center">
-          <div className="relative w-full h-[260px] md:h-[1089px]">
-            <Image
-              src="/images/Export/biblioteka-skola.webp"
-              alt="Ресавска скрипторска школа"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </section>
-
-        {/* ── ДЕСПОТ СТЕФАН — СПИСАТЕЉ ─────────────────────────── */}
-        <section
-          className="relative w-full overflow-visible mt-4 md:mt-50"
-          style={{ minHeight: "600px" }}
-        >
-          {/* Mobile: bleeding image from the left */}
-          <div className="md:hidden relative" style={{ height: "480px", marginBottom: "-40px" }}>
-            <div style={{ position: "absolute", left: "-140px", right: "-60px", top: 0, height: "480px" }}>
-              <Image
-                src="/images/Export/despot-culture.webp"
-                alt="Деспот Стефан — списатељ"
-                fill
-                className="object-contain object-left"
-              />
-            </div>
-          </div>
-
-          {/* Desktop: absolute positioned left */}
-          <div
-            className="hidden md:block"
-            style={{
-              position: "absolute",
-              top: "-300px",
-              left: "-280px",
-              width: "1280px",
-              height: "1120px",
-              zIndex: 0,
-            }}
-          >
-            <Image
-              src="/images/Export/despot-culture.webp"
-              alt="Деспот Стефан — списатељ"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          {/* Text */}
-          <div
-            className="relative mx-auto max-w-[1200px] px-4 md:px-8 h-full flex items-center"
-            style={{ zIndex: 1 }}
-          >
-            <div className="ml-0 md:ml-auto flex flex-col gap-6 max-w-lg pt-0 pb-8 md:py-32">
-              <h2
-                className="text-5xl md:text-7xl text-zinc-900 leading-tight"
-                style={{ fontFamily: "var(--font-caveat), cursive" }}
-              >
-                Деспот Стефан — списатељ
-              </h2>
-              <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
-                Деспот Стефан Лазаревић није био само ратник и државник — он је
-                и сам писао. Његово „Слово љубве", посвећено братству витешког
-                реда, представља ремек-дело средњовековне српске лирске прозе,
-                прожето хуманистичким идеалима и дубоком духовношћу.
-              </p>
-              <p className="text-sm md:text-base text-zinc-600 leading-relaxed">
-                Поред деспота, у Манасији је деловао Константин Филозоф, бугарски
-                учени монах и писац, аутор чувеног „Живота деспота Стефана
-                Лазаревића" — незаобилазног извора за историју Србије тог доба
-                и врхунца средњовековне српске биографске književnosti.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── FULL-WIDTH СЛИКА ─────────────────────────────────── */}
-        <section className="w-full flex flex-col items-center">
-          <div className="relative w-full h-[260px] md:h-[1089px]">
-            <Image
-              src="/images/Export/biblioteka-sudbina.webp"
-              alt="Рукописи Манасије"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </section>
-
-        {/* ── ЛИТЕРАРНО НАСЛЕЂЕ ────────────────────────────────── */}
-        <section className="w-full py-8 md:py-24 mb-8 md:mb-[100px] mt-0 md:mt-[-100px]">
-          <div className="mx-auto max-w-[800px] px-4 md:px-8 flex flex-col items-center text-center gap-6 md:gap-10">
-            <h2
-              className="text-5xl md:text-7xl text-zinc-900 leading-tight"
-              style={{ fontFamily: "var(--font-caveat), cursive" }}
-            >
-              Литерарно наслеђе
-            </h2>
-            <div className="flex flex-col gap-6 text-sm md:text-base text-zinc-600 leading-relaxed">
-              <p>
-                Након пада Манасије под османску власт 1439. године, рад школе
-                је прекинут, али духовно и литерарно семе које је посејано није
-                могло бити уништено. Ресавска традиција преписивања и
-                књижевног стварања наставила је да живи кроз рукописе растурене
-                широм православног света.
-              </p>
-              <p>
-                Данас се литерарно наслеђе Манасије изучава на универзитетима,
-                чува у музејима и враћа животу кроз савремена издања и
-                истраживачке пројекте. Оно подсећа да је ова тврђава, поред
-                камена и гвожђа, грађена и речима.
-              </p>
-            </div>
+        {/* ── Напомена ───────────────────────────────────────── */}
+        <section className="w-full pb-16 md:pb-32 px-4 md:px-8">
+          <div className="mx-auto max-w-[860px]">
+            <div className="w-full h-[1px] bg-zinc-300 mb-10" />
+            <p className="text-xs text-zinc-500 leading-relaxed max-w-xl">
+              Овај списак представља полазни водич и није исцрпан. Уколико
+              желите да предложите додатне наслове или сте заинтересовани
+              за набавку неке од наведених публикација кроз манастирску
+              продавницу, контактирајте нас на{" "}
+              <span className="text-zinc-700 font-medium">
+                info@manastir-manasija.rs
+              </span>
+              .
+            </p>
           </div>
         </section>
       </div>

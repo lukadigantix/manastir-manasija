@@ -28,7 +28,7 @@ export default function Home() {
             </div>
 
             {/* Text */}
-            <div className="flex flex-col items-center lg:items-start gap-6 text-center lg:text-left order-2 lg:order-2">
+            <div className="relative z-10 flex flex-col items-center lg:items-start gap-6 text-center lg:text-left order-2 lg:order-2">
               <h1
                 className="text-5xl md:text-7xl text-zinc-900 leading-tight"
                 style={{ fontFamily: "var(--font-caveat), cursive" }}
@@ -44,7 +44,7 @@ export default function Home() {
                 својим делима оставио дубок печат на српску историју.
               </p>
               <Link
-                href="/o-manastiru"
+                href="/despot-stefan"
                 className="mt-2 bg-[#5a1e1e] text-white text-[10px] md:text-xs font-bold tracking-wide md:tracking-widest px-5 py-2.5 md:px-10 md:py-4 hover:bg-[#3e1515] transition-colors"
               >
                 САЗНАЈ ВИШЕ
@@ -177,7 +177,7 @@ export default function Home() {
                   је пример врхунске српске архитектуре касног средњег века.
                 </p>
                 <Link
-                  href="/o-manastiru"
+                  href="/utvrdjenje"
                   className="w-fit bg-[#5a1e1e] text-white text-[10px] md:text-xs font-bold tracking-wide md:tracking-widest px-5 py-2.5 md:px-8 md:py-3 hover:bg-[#3e1515] transition-colors"
                 >
                   САЗНАЈТЕ ВИШЕ
@@ -208,7 +208,7 @@ export default function Home() {
                 мајсторству и духовном значају овог места.
               </p>
               <Link
-                href="/o-manastiru"
+                href="/arhitektura"
                 className="w-fit bg-[#5a1e1e] text-white text-[10px] md:text-xs font-bold tracking-wide md:tracking-widest px-5 py-2.5 md:px-8 md:py-3 hover:bg-[#3e1515] transition-colors"
               >
                 САЗНАЈТЕ ВИШЕ
@@ -255,7 +255,7 @@ export default function Home() {
               је као „Ресавска ренесанса&#8221;.
             </p>
             <Link
-              href="/o-manastiru"
+              href="/freskopis"
               className="w-fit bg-[#5a1e1e] text-white text-[10px] md:text-xs font-bold tracking-wide md:tracking-widest px-5 py-2.5 md:px-8 md:py-3 hover:bg-[#3e1515] transition-colors"
             >
               САЗНАЈТЕ ВИШЕ
@@ -372,7 +372,7 @@ export default function Home() {
                 представља и део одбрамбеног система манастира.
               </p>
               <Link
-                href="/o-manastiru"
+                href="/trpezarija"
                 className="w-fit bg-[#5a1e1e] text-white text-[10px] md:text-xs font-bold tracking-wide md:tracking-widest px-5 py-2.5 md:px-8 md:py-3 hover:bg-[#3e1515] transition-colors"
               >
                 САЗНАЈТЕ ВИШЕ
@@ -402,7 +402,7 @@ export default function Home() {
                 уметности.
               </p>
               <Link
-                href="/o-manastiru"
+                href="/biblioteka"
                 className="w-fit bg-[#5a1e1e] text-white text-[10px] md:text-xs font-bold tracking-wide md:tracking-widest px-5 py-2.5 md:px-8 md:py-3 hover:bg-[#3e1515] transition-colors"
               >
                 САЗНАЈТЕ ВИШЕ
@@ -450,7 +450,7 @@ export default function Home() {
                 књижевности и културе у 15. веку.
               </p>
               <Link
-                href="/o-manastiru"
+                href="/resavska-skola"
                 className="w-fit bg-[#5a1e1e] text-white text-[10px] md:text-xs font-bold tracking-wide md:tracking-widest px-5 py-2.5 md:px-8 md:py-3 hover:bg-[#3e1515] transition-colors"
               >
                 САЗНАЈТЕ ВИШЕ
